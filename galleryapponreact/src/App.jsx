@@ -11,7 +11,7 @@ const App = () => {
 
       }
   
-  let loadingsc = <img className='h-full w-full' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTG_okS5KYa4r7jhsDH6jq0E1RzWNCgoq7QFwGEr1ilw&s=10" alt="" />
+  let loadingsc = <img className='h-full w-full' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROu-pAt127p2FNfER1Y4v0OaEgvbuY-bY2gbVU1Ych7g&s=10" alt="" />
 
   if(photos.length>0){
     loadingsc = photos.map((elem,idx)=>{
@@ -59,13 +59,13 @@ const App = () => {
     <div className='p-5'>
 
       <div className='flex flex-wrap justify-center gap-4 mt-4 '>
-
         {getData}
         {loadingsc}
       </div> 
     
     <div className='flex gap-15 justify-center mt-4'>
       <button onClick={prev} className='bg-fuchsia-600 text-white font-bold rounded py-1 px-4 active:scale-95 '>Prev</button>
+      <h3 className='text-green-600 font-bold'>{num}</h3>
       <button onClick={next} className='bg-fuchsia-600 text-white font-bold rounded py-1 px-4 active:scale-95'>Next</button>
     </div>
     
