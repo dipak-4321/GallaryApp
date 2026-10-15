@@ -10,18 +10,32 @@ const App = () => {
     console.log(photos)
 
       }
-      
+  
+  let loadingsc = <img className='h-full w-full' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTG_okS5KYa4r7jhsDH6jq0E1RzWNCgoq7QFwGEr1ilw&s=10" alt="" />
 
-   const  photedata = photos.map((elem)=>{
-     return (
-       <a className='h-full w-85 sm:w-72' href={elem.url}>
-         <div className='sm:h-57 bg-green-100 h-65 w-full sm:w-72 rounded-2xl overflow-hidden'>
+  if(photos.length>0){
+    loadingsc = photos.map((elem,idx)=>{
+      return (
+        <a className='h-full w-85 sm:w-72' href={elem.url} target='blank'>
+          <div className='sm:h-57 bg-gray-100 h-65 w-full sm:w-72 rounded-2xl overflow-hidden'>
             <img className='h-full w-full' src={elem.download_url} />
-            </div>
-            </a>
+          </div>
+        </a>
+      )
+      
+    })
+  }
 
-          )
-      })
+  //  const  photedata = photos.map((elem)=>{
+  //    return (
+      //  <a className='h-full w-85 sm:w-72' href={elem.url}>
+      //    <div className='sm:h-57 bg-green-100 h-65 w-full sm:w-72 rounded-2xl overflow-hidden'>
+      //       <img className='h-full w-full' src={elem.download_url} />
+      //       </div>
+      //       </a>
+
+  //         )
+  //     })
     
   
   return (
@@ -31,7 +45,8 @@ const App = () => {
     onClick={getData}>Get Photo</button>
 
     <div className='flex flex-wrap gap-4 mt-4'>
-      {photedata}
+      {/* {photedata} */}
+      {loadingsc}
     </div>
     
     <div className='flex gap-15 justify-center mt-4'>
